@@ -11,6 +11,7 @@ const Contact = () => {
   })
   const [copied, setCopied] = useState(false)
   const [submitted, setSubmitted] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
   const [hoveredField, setHoveredField] = useState(null)
 
   const handleChange = (e) => {
@@ -20,11 +21,39 @@ const Contact = () => {
     })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    setSubmitted(true)
-    setTimeout(() => setSubmitted(false), 3000)
-    setFormData({ name: '', email: '', subject: '', message: '' })
+    setSubmitting(true)
+    
+    try {
+      // Replace YOUR_FORM_ID with your actual Formspree form ID
+      const response = await fetch('https://formspree.io/f/xaewkken', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          _subject: `Portfolio Contact: ${formData.subject}`,
+        }),
+      })
+      
+      if (response.ok) {
+        setSubmitted(true)
+        setFormData({ name: '', email: '', subject: '', message: '' })
+        setTimeout(() => setSubmitted(false), 5000)
+      } else {
+        alert('Failed to send message. Please try again or email me directly at rkhaiderali4@gmail.com')
+      }
+    } catch (error) {
+      alert('Network error. Please try again or email me directly at rkhaiderali4@gmail.com')
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   const copyEmail = () => {
@@ -276,14 +305,32 @@ const Contact = () => {
 
               <motion.button
                 type="submit"
-                whileHover={{ scale: 1.03, y: -2 }}
-                whileTap={{ scale: 0.97 }}
-                className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-emerald-500 text-white rounded-lg font-medium hover:bg-emerald-600 transition-colors shadow-lg shadow-emerald-500/30"
+                disabled={submitting}
+                whileHover={{ scale: submitting ? 1 : 1.03, y: submitting ? 0 : -2 }}
+                whileTap={{ scale: submitting ? 1 : 0.97 }}
+                className={`w-full flex items-center justify-center gap-2 px-6 py-4 rounded-lg font-medium transition-colors shadow-lg ${
+                  submitted 
+                    ? 'bg-green-600 text-white shadow-green-600/30' 
+                    : submitting 
+                      ? 'bg-gray-500 text-white cursor-not-allowed' 
+                      : 'bg-emerald-500 text-white hover:bg-emerald-600 shadow-emerald-500/30'
+                }`}
               >
-                {submitted ? (
+                {submitting ? (
+                  <>
+                    <motion.span
+                      animate={{ rotate: 360 }}
+                      transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                      className="inline-block"
+                    >
+                      <FiSend className="w-5 h-5" />
+                    </motion.span>
+                    Sending...
+                  </>
+                ) : submitted ? (
                   <>
                     <FiCheck className="w-5 h-5" />
-                    Message Sent!
+                    Message Sent Successfully!
                   </>
                 ) : (
                   <>
