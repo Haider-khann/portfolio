@@ -1,0 +1,507 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-primary: #0A0A0B;
+    --bg-secondary: #141416;
+    --text-primary: #FAFAFA;
+    --text-secondary: #A1A1AA;
+    --accent-blue: #3B82F6;
+    --accent-violet: #8B5CF6;
+    --border-color: rgba(255, 255, 255, 0.08);
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --card-border: rgba(255, 255, 255, 0.1);
+    --hover-bg: rgba(255, 255, 255, 0.1);
+    --glow-color: rgba(16, 185, 129, 0.3);
+  }
+
+  [data-theme="light"] {
+    --bg-primary: #F8FAFC;
+    --bg-secondary: #FFFFFF;
+    --text-primary: #0F172A;
+    --text-secondary: #475569;
+    --accent-blue: #2563EB;
+    --accent-violet: #7C3AED;
+    --border-color: rgba(15, 23, 42, 0.08);
+    --card-bg: rgba(255, 255, 255, 0.8);
+    --card-border: rgba(15, 23, 42, 0.1);
+    --hover-bg: rgba(15, 23, 42, 0.05);
+    --glow-color: rgba(16, 185, 129, 0.15);
+  }
+
+  * {
+    @apply transition-colors duration-300;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    width: 100%;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+    color: var(--text-primary);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .glass-morphism {
+    @apply backdrop-blur-md bg-opacity-50 border;
+    background: var(--glass-bg, rgba(255, 255, 255, 0.03));
+    border-color: var(--border-color);
+  }
+
+  [data-theme="light"] .glass-morphism {
+    --glass-bg: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-[var(--accent-blue)] to-[var(--accent-violet)] bg-clip-text text-transparent;
+  }
+
+  .hover-glow {
+    @apply transition-all duration-300;
+  }
+
+  .hover-glow:hover {
+    box-shadow: 0 0 20px var(--glow-color);
+    @apply transform scale-[1.02];
+  }
+}
+
+/* ============ LIGHT THEME OVERRIDES ============ */
+
+/* Text Colors */
+[data-theme="light"] .text-white {
+  color: #0F172A !important;
+}
+
+[data-theme="light"] .text-gray-300 {
+  color: #475569 !important;
+}
+
+[data-theme="light"] .text-gray-400 {
+  color: #64748B !important;
+}
+
+[data-theme="light"] .text-gray-500 {
+  color: #94A3B8 !important;
+}
+
+[data-theme="light"] .text-gray-600 {
+  color: #64748B !important;
+}
+
+/* Background Colors */
+[data-theme="light"] .bg-white\/5 {
+  background-color: rgba(255, 255, 255, 0.7) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .bg-white\/10 {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Border Colors */
+[data-theme="light"] .border-white\/10 {
+  border-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+[data-theme="light"] .border-white\/20 {
+  border-color: rgba(15, 23, 42, 0.12) !important;
+}
+
+/* Gradients */
+[data-theme="light"] .from-white\/10 {
+  background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7)) !important;
+}
+
+[data-theme="light"] .to-white\/5 {
+  background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7)) !important;
+}
+
+[data-theme="light"] .bg-gradient-to-br.from-white\/10.to-white\/5 {
+  background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7)) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Hover States */
+[data-theme="light"] .hover\:bg-white\/10:hover {
+  background-color: rgba(15, 23, 42, 0.04) !important;
+}
+
+[data-theme="light"] .hover\:bg-white\/20:hover {
+  background-color: rgba(15, 23, 42, 0.06) !important;
+}
+
+[data-theme="light"] .hover\:text-white:hover {
+  color: #0F172A !important;
+}
+
+/* Fixed Background Colors */
+[data-theme="light"] .bg-\[\#0A0A0B\] {
+  background-color: #F8FAFC !important;
+}
+
+[data-theme="light"] .bg-\[\#0A0A0B\]\/40 {
+  background-color: rgba(248, 250, 252, 0.5) !important;
+}
+
+[data-theme="light"] .bg-\[\#0A0A0B\]\/80 {
+  background-color: rgba(248, 250, 252, 0.85) !important;
+  backdrop-filter: blur(20px);
+}
+
+[data-theme="light"] .bg-\[\#0A0A0B\]\/95 {
+  background-color: rgba(248, 250, 252, 0.95) !important;
+  backdrop-filter: blur(20px);
+}
+
+[data-theme="light"] .bg-\[\#1a1a1a\] {
+  background-color: #FFFFFF !important;
+}
+
+[data-theme="light"] .bg-\[\#1a1a1a\]\/95 {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(20px);
+}
+
+/* Shadows */
+[data-theme="light"] .shadow-lg {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08) !important;
+}
+
+[data-theme="light"] .shadow-2xl {
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* Cards */
+[data-theme="light"] .rounded-xl {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .rounded-lg {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+/* Glass morphism cards in light mode */
+[data-theme="light"] section .bg-white\/5,
+[data-theme="light"] section .bg-white\/10 {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Emoji and icon visibility */
+[data-theme="light"] .text-5xl,
+[data-theme="light"] .text-6xl {
+  opacity: 1;
+}
+
+/* ============ SCROLLBAR ============ */
+
+/* Custom Scrollbar */
+.custom-scrollbar {
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  transition: background 0.3s;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+[data-theme="light"] .custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(15, 23, 42, 0.2);
+}
+
+[data-theme="light"] .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(15, 23, 42, 0.4);
+}
+
+/* Skill Card Scrollbar */
+.skill-scroll {
+  overflow-y: auto;
+}
+
+.skill-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+.skill-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.skill-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+.skill-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+[data-theme="light"] .skill-scroll::-webkit-scrollbar-thumb {
+  background: rgba(15, 23, 42, 0.2);
+}
+
+[data-theme="light"] .skill-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(15, 23, 42, 0.4);
+}
+
+/* ============ ANIMATIONS ============ */
+
+@keyframes shine {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes moveGrid {
+  0% { background-position: 0 0; }
+  100% { background-position: 20px 20px; }
+}
+
+@keyframes scrollIndicator {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(200%); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-up {
+  animation: slideUp 0.5s ease-out;
+}
+
+/* ============ MOBILE RESPONSIVE ============ */
+
+@media (max-width: 1024px) {
+  section {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+
+  .grid {
+    gap: 1.25rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  h3 {
+    font-size: 1.5rem !important;
+  }
+
+  #home h1 {
+    font-size: 2.5rem !important;
+  }
+
+  #home p {
+    font-size: 0.875rem !important;
+  }
+
+  .grid {
+    gap: 1rem !important;
+  }
+
+  button, 
+  a, 
+  input, 
+  textarea, 
+  select {
+    min-height: 44px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 3px;
+  }
+
+  button {
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  .h-72, .h-80 {
+    height: 16rem !important;
+  }
+
+  .text-5xl {
+    font-size: 2rem !important;
+  }
+
+  .text-4xl {
+    font-size: 1.75rem !important;
+  }
+
+  .text-3xl {
+    font-size: 1.5rem !important;
+  }
+
+  .text-2xl {
+    font-size: 1.25rem !important;
+  }
+
+  .text-xl {
+    font-size: 1.125rem !important;
+  }
+
+  .text-lg {
+    font-size: 1rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  #home h1 {
+    font-size: 2rem !important;
+  }
+
+  #home p {
+    font-size: 0.8125rem !important;
+  }
+
+  section {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+
+  .h-72, .h-80 {
+    height: 14rem !important;
+  }
+
+  .text-6xl {
+    font-size: 2.5rem !important;
+  }
+
+  button {
+    min-height: 40px;
+  }
+}
+
+/* ============ MISC ============ */
+
+/* Mobile-specific hover states */
+@media (hover: none) and (pointer: coarse) {
+  button, a, input, textarea {
+    cursor: default !important;
+  }
+
+  .hover\:scale-105:hover,
+  .hover\:scale-110:hover,
+  .hover\:scale-125:hover {
+    transform: none !important;
+  }
+}
+
+/* Prevent horizontal scroll */
+body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+}
+
+/* Fix for iOS Safari 100vh issue */
+@supports (-webkit-touch-callout: none) {
+  .min-h-screen {
+    min-height: -webkit-fill-available;
+  }
+}
+
+/* Better form elements on mobile */
+@media (max-width: 768px) {
+  input, textarea, select {
+    font-size: 16px !important;
+  }
+}
+
+/* Smooth animations */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Prevent image dragging */
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Better focus states */
+button:focus,
+a:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Resume modal cursor */
+.resume-modal,
+.resume-modal * {
+  cursor: auto !important;
+}
