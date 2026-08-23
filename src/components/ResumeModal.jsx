@@ -82,7 +82,7 @@ const ResumeModal = ({ isOpen, onClose }) => {
   const generateResumeHTML = () => {
     return `
       <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 20px;">
-        <img src="../../images/profile.jpg" alt="Haider Khan" class="profile-img" onerror="this.style.display='none'" />
+        <img src="/portfolio/images/profile.jpg" alt="Haider Khan" class="profile-img" onerror="this.style.display='none'" />
         <div>
           <h1>HAIDER KHAN</h1>
           <p style="font-size: 18px; color: #10B981; margin: 5px 0;">AI/ML Engineer & Developer</p>
@@ -341,9 +341,9 @@ Others: Coding, Acting, Gaming
                 <div className="border-b-4 border-emerald-500 pb-4 mb-6">
                   <div className="flex items-center gap-6 mb-4">
                     {/* Profile Picture */}
-                    <div className="w-28 h-28 rounded-full bg-gray-200 flex items-center justify-center border-2 border-emerald-500 overflow-hidden">
+                    <div className="w-28 h-28 rounded-full bg-gray-200 flex items-center justify-center border-2 border-emerald-500 overflow-hidden flex-shrink-0">
                       <img 
-                        src="/images/profile.jpg" 
+                        src="/portfolio/images/profile.jpg" 
                         alt="Haider Khan"
                         className="w-full h-full object-cover"
                         onError={(e) => {
