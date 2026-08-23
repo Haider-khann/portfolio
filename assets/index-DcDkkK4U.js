@@ -3996,25 +3996,26 @@ void main() {
       <div class="section">
         <h2>EDUCATION</h2>
         <p><strong>Bachelor's in Computer Science</strong> - University of Gujrat</p>
-        <p>Currently in 4th Semester</p>
+        <p>Currently in University</p>
         <p><strong>Intermediate in ICS</strong> - Punjab College</p>
-        <p>Marks: 865/1100</p>
+        <p>Marks: A</p>
         <p><strong>Matriculation</strong> - A+ School System</p>
-        <p>Marks: 1086/1100</p>
+        <p>Marks: A+</p>
       </div>
 
       <div class="section">
         <h2>EXPERIENCE</h2>
-        <p><strong>Freelance Web Developer</strong> - Built websites for clients</p>
-        <p><strong>Game Developer</strong> - Built games like Snake Game, Tic Tac Toe</p>
+        <p><strong>Freelance Web Developer</strong> - Built ecomerce websites for clients</p>
+        <p><strong>Game Developer</strong> - Built games like Snake Game, Tic Tac Toe, space shooters etc..</p>
+        <p><strong>AI/ML Developer</strong> - Student performance predictor, SLIS:smart classroom intelligence system etc..</p>
       </div>
 
       <div class="section">
         <h2>TECHNICAL SKILLS</h2>
-        <p><strong>Programming Languages:</strong> Python, C++, C, JavaScript, SQL, Visual Basic</p>
-        <p><strong>AI & Machine Learning:</strong> Machine Learning, Deep Learning, NLP, Scikit-learn, PyTorch, Whisper, Pyannote, Generative AI, LLMs</p>
+        <p><strong>Programming Languages:</strong> Python, C++, C, JavaScript, Flutter and Dart, SQL, Visual Basic</p>
+        <p><strong>AI & Machine Learning:</strong> Machine Learning, NLP, Scikit-learn, PyTorch, Whisper, Pyannote, Generative AI, learning LLMs/Deep Learning</p>
         <p><strong>Web Development:</strong> HTML5, CSS3, JavaScript, Node.js, Express.js, React, REST APIs</p>
-        <p><strong>Databases:</strong> MySQL, MongoDB</p>
+        <p><strong>Databases:</strong>SQL, MySQL, MongoDB</p>
         <p><strong>Tools:</strong> Git, GitHub, VS Code, Google Colab, Jupyter Notebook</p>
       </div>
 
