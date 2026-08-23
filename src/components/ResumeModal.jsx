@@ -1,12 +1,12 @@
 import React, { useState, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FiX, FiDownload, FiMail, FiGithub, FiLinkedin, FiFile, FiFileText, FiUser, FiCode, FiCpu, FiDatabase, FiGlobe, FiTool, FiBook, FiPhone, FiMapPin } from 'react-icons/fi'
-import profilePic from '../../images/profile.jpg'
 
 const ResumeModal = ({ isOpen, onClose }) => {
   const [selectedFormat, setSelectedFormat] = useState(null)
   const [downloading, setDownloading] = useState(false)
   const resumeRef = useRef(null)
+  const imagePath = `${import.meta.env.BASE_URL}images/profile.jpg`
 
   const handleDownload = (format) => {
     setSelectedFormat(format)
@@ -83,7 +83,7 @@ const ResumeModal = ({ isOpen, onClose }) => {
   const generateResumeHTML = () => {
     return `
       <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 20px;">
-        <img src="${profilePic}" alt="Haider Khan" class="profile-img" onerror="this.style.display='none'" />
+        <img src="${imagePath}" alt="Haider Khan" class="profile-img" onerror="this.style.display='none'" />
         <div>
           <h1>HAIDER KHAN</h1>
           <p style="font-size: 18px; color: #10B981; margin: 5px 0;">AI/ML Engineer & Developer</p>
@@ -344,7 +344,7 @@ Others: Coding, Acting, Gaming
                     {/* Profile Picture */}
                     <div className="w-28 h-28 rounded-full bg-gray-200 flex items-center justify-center border-2 border-emerald-500 overflow-hidden flex-shrink-0">
                       <img 
-                        src={profilePic}
+                        src={imagePath}
                         alt="Haider Khan"
                         className="w-full h-full object-cover"
                         onError={(e) => {
