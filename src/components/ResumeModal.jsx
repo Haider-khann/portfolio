@@ -41,6 +41,7 @@ const ResumeModal = ({ isOpen, onClose }) => {
             .section { margin-bottom: 20px; }
             .project { margin-bottom: 10px; }
             .project-title { font-weight: bold; }
+            .profile-img { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; }
           </style>
         </head>
         <body>
@@ -80,8 +81,13 @@ const ResumeModal = ({ isOpen, onClose }) => {
 
   const generateResumeHTML = () => {
     return `
-      <h1>HAIDER KHAN</h1>
-      <p style="font-size: 18px; color: #10B981; margin: 5px 0;">AI/ML Engineer & Developer</p>
+      <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 20px;">
+        <img src="/images/profile.jpg" alt="Haider Khan" class="profile-img" onerror="this.style.display='none'" />
+        <div>
+          <h1>HAIDER KHAN</h1>
+          <p style="font-size: 18px; color: #10B981; margin: 5px 0;">AI/ML Engineer & Developer</p>
+        </div>
+      </div>
       <div class="contact">
         <span>📧 rkhaiderali4@gmail.com</span>
         <span>📍 Pakistan</span>
@@ -118,7 +124,7 @@ const ResumeModal = ({ isOpen, onClose }) => {
         <p><strong>Programming Languages:</strong> Python, C++, C, JavaScript, Flutter and Dart, SQL, Visual Basic</p>
         <p><strong>AI & Machine Learning:</strong> Machine Learning, NLP, Scikit-learn, PyTorch, Whisper, Pyannote, Generative AI, learning LLMs/Deep Learning</p>
         <p><strong>Web Development:</strong> HTML5, CSS3, JavaScript, Node.js, Express.js, React, REST APIs</p>
-        <p><strong>Databases:</strong>SQL, MySQL, MongoDB</p>
+        <p><strong>Databases:</strong> SQL, MySQL, MongoDB</p>
         <p><strong>Tools:</strong> Git, GitHub, VS Code, Google Colab, Jupyter Notebook</p>
       </div>
 
@@ -194,30 +200,34 @@ EDUCATION
 ---------
 Bachelor's in Computer Science
 University of Gujrat
-Currently in 4th Semester
+Currently in University
 
 Intermediate in ICS
 Punjab College
-Marks: 865/1100
+Grade: A
 
 Matriculation
 A+ School System
-Marks: 1086/1100
+Grade: A+
 
 EXPERIENCE
 ----------
 Freelance Web Developer
-Built websites for clients
+Built Ecomerce websites for clients
 
 Game Developer
-Built games like Snake Game, Tic Tac Toe
+Built games like Snake Game, Tic Tac Toe, Space Shooter Game, and more..
+
+AI/ML Developer
+Built AI-powered applications like Student Performance Predictor, 
+Smart Lecture Intelligence System, and more..
 
 TECHNICAL SKILLS
 ----------------
-Languages: Python, C++, C, JavaScript, SQL, Visual Basic
+Languages: Python, C++, C, JavaScript, Flutter and Dart, SQL, Visual Basic
 AI & ML: ML, Deep Learning, NLP, PyTorch, Generative AI
 Web: HTML5, CSS3, Node.js, Express, React
-Databases: MySQL, MongoDB
+Databases: SQL, MySQL, MongoDB
 Tools: Git, GitHub, VS Code, Colab
 
 FEATURED PROJECTS
@@ -330,7 +340,7 @@ Others: Coding, Acting, Gaming
                 {/* Resume Header */}
                 <div className="border-b-4 border-emerald-500 pb-4 mb-6">
                   <div className="flex items-center gap-6 mb-4">
-                    {/* Profile Picture Placeholder - Will automatically use your photo when added */}
+                    {/* Profile Picture */}
                     <div className="w-28 h-28 rounded-full bg-gray-200 flex items-center justify-center border-2 border-emerald-500 overflow-hidden">
                       <img 
                         src="/images/profile.jpg" 
@@ -393,17 +403,17 @@ Others: Coding, Acting, Gaming
                     <div>
                       <p className="text-sm font-semibold text-gray-800">Bachelor's in Computer Science</p>
                       <p className="text-sm text-gray-600">University of Gujrat</p>
-                      <p className="text-sm text-gray-600">Currently in 4th Semester</p>
+                      <p className="text-sm text-gray-600">Currently in University</p>
                     </div>
                     <div>
                       <p className="text-sm font-semibold text-gray-800">Intermediate in ICS</p>
                       <p className="text-sm text-gray-600">Punjab College</p>
-                      <p className="text-sm text-gray-600">Marks: 865/1100</p>
+                      <p className="text-sm text-gray-600">Grade: A</p>
                     </div>
                     <div>
                       <p className="text-sm font-semibold text-gray-800">Matriculation</p>
                       <p className="text-sm text-gray-600">A+ School System</p>
-                      <p className="text-sm text-gray-600">Marks: 1086/1100</p>
+                      <p className="text-sm text-gray-600">Grade: A+</p>
                     </div>
                   </div>
                 </div>
@@ -416,11 +426,15 @@ Others: Coding, Acting, Gaming
                   <div className="space-y-3">
                     <div>
                       <p className="text-sm font-semibold text-gray-800">Freelance Web Developer</p>
-                      <p className="text-sm text-gray-600">Built websites for clients</p>
+                      <p className="text-sm text-gray-600">Built ecomerce websites for clients</p>
                     </div>
                     <div>
                       <p className="text-sm font-semibold text-gray-800">Game Developer</p>
-                      <p className="text-sm text-gray-600">Built games like Snake Game, Tic Tac Toe</p>
+                      <p className="text-sm text-gray-600">Built games like Snake Game, Tic Tac Toe, space shooters etc..</p>
+                    </div>
+                    <div>
+                      <p className="text-sm font-semibold text-gray-800">AI/ML Developer</p>
+                      <p className="text-sm text-gray-600">Student performance predictor, SLIS:smart classroom intelligence system etc..</p>
                     </div>
                   </div>
                 </div>
@@ -433,11 +447,11 @@ Others: Coding, Acting, Gaming
                   <div className="grid grid-cols-2 gap-3 text-sm">
                     <div>
                       <p className="font-semibold text-gray-800">Programming Languages:</p>
-                      <p className="text-gray-600">Python, C++, C, JavaScript, SQL, Visual Basic</p>
+                      <p className="text-gray-600">Python, C++, C, JavaScript, Flutter and Dart, SQL, Visual Basic</p>
                     </div>
                     <div>
                       <p className="font-semibold text-gray-800">AI & Machine Learning:</p>
-                      <p className="text-gray-600">ML, Deep Learning, NLP, PyTorch, Generative AI</p>
+                      <p className="text-gray-600">ML, NLP, PyTorch, Generative AI, LLMs/Deep Learning</p>
                     </div>
                     <div>
                       <p className="font-semibold text-gray-800">Web Development:</p>
@@ -445,7 +459,7 @@ Others: Coding, Acting, Gaming
                     </div>
                     <div>
                       <p className="font-semibold text-gray-800">Databases & Tools:</p>
-                      <p className="text-gray-600">MySQL, MongoDB, Git, VS Code</p>
+                      <p className="text-gray-600">SQL, MySQL, MongoDB, Git, VS Code</p>
                     </div>
                   </div>
                 </div>
