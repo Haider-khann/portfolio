@@ -3979,7 +3979,7 @@ void main() {
       </html>
     `),m.document.close(),m.print()},d=()=>{const m=f(),y=new Blob([m],{type:"application/msword"}),w=URL.createObjectURL(y),x=document.createElement("a");x.href=w,x.download="Haider-Khan-Resume.doc",document.body.appendChild(x),x.click(),document.body.removeChild(x),URL.revokeObjectURL(w)},h=()=>{const m=p(),y=new Blob([m],{type:"text/plain"}),w=URL.createObjectURL(y),x=document.createElement("a");x.href=w,x.download="Haider-Khan-Resume.txt",document.body.appendChild(x),x.click(),document.body.removeChild(x),URL.revokeObjectURL(w)},f=()=>`
       <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 20px;">
-        <img src="/images/profile.jpg" alt="Haider Khan" class="profile-img" onerror="this.style.display='none'" />
+        <img src="../../images/profile.jpg" alt="Haider Khan" class="profile-img" onerror="this.style.display='none'" />
         <div>
           <h1>HAIDER KHAN</h1>
           <p style="font-size: 18px; color: #10B981; margin: 5px 0;">AI/ML Engineer & Developer</p>
