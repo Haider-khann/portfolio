@@ -26,7 +26,7 @@ const Projects = () => {
       icon: 'FiCode',
       color: '#3B82F6',
       status: 'Completed',
-      link: 'https://github.com/Haider-Khann'
+      link: 'https://github.com/Haider-khann/JARVIS-AI-OS'
     },
     {
       id: 3,
@@ -47,7 +47,7 @@ const Projects = () => {
       tech: ['React', 'Node.js', 'Express', 'MongoDB'],
       icon: 'FiFolder',
       color: '#F59E0B',
-      status: 'Completed',
+      status: 'Completed not Uploaded',
       link: 'https://github.com/Haider-Khann'
     },
     {
@@ -59,7 +59,7 @@ const Projects = () => {
       icon: 'FiCode',
       color: '#EF4444',
       status: 'Completed',
-      link: 'https://github.com/Haider-Khann'
+      link: 'https://github.com/Haider-khann/Car-Rental-system-Dsa'
     },
     {
       id: 6,
@@ -69,9 +69,20 @@ const Projects = () => {
       tech: ['Python', 'Pygame', 'Game Dev'],
       icon: 'FiBox',
       color: '#EC4899',
-      status: 'Completed',
+      status: 'Completed not Uploaded',
       link: 'https://github.com/Haider-Khann'
-    }
+    },
+    {
+      id: 3,
+      title: 'DevPilot — AI-Powered Code Intelligence Platform',
+      description: 'An AI/ML platform that analyzes GitHub repositories for code quality, security, and documentation.',
+      longDescription: 'ML model that analyzes GitHub repositories for code quality, security, and documentation, also has a chatbot to interact with providing acces to AI-Tools that can analyze code also provide suggestiong to improve code.',
+      tech: ['Python', 'Scikit-learn', 'Pandas', 'ML Algorithms','React','CSS','Artificial Intelligence',Deep Learning],
+      icon: 'FiDatabase',
+      color: '#9C5CF6',
+      status: 'Completed',
+      link: 'https://github.com/Haider-Khann/DevPilot'
+    },
   ]
 
   const getIcon = (iconName) => {
