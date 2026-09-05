@@ -73,16 +73,16 @@ const Projects = () => {
       link: 'https://github.com/Haider-Khann'
     },
     {
-      id: 3,
+      id: 7,
       title: 'DevPilot — AI-Powered Code Intelligence Platform',
       description: 'An AI/ML platform that analyzes GitHub repositories for code quality, security, and documentation.',
       longDescription: 'ML model that analyzes GitHub repositories for code quality, security, and documentation, also has a chatbot to interact with providing acces to AI-Tools that can analyze code also provide suggestiong to improve code.',
       tech: ['Python', 'Scikit-learn', 'Pandas', 'ML Algorithms','React','CSS','Artificial Intelligence',Deep Learning],
       icon: 'FiDatabase',
-      color: '#9C5CF6',
+      color: '#8C5CF4',
       status: 'Completed',
       link: 'https://github.com/Haider-Khann/DevPilot'
-    },
+    }
   ]
 
   const getIcon = (iconName) => {
